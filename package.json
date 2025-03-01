@@ -2,6 +2,7 @@
   "name": "hello-world",
   "displayName": "Hello World",
   "description": "Display \"Hello, world!\" in various ways!",
+  "publisher": "wnrock",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.97.0"
