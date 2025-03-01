@@ -3,6 +3,10 @@
   "displayName": "Hello World",
   "description": "Display \"Hello, world!\" in various ways!",
   "publisher": "wnrock",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WnRockDev/hello_world.git"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.97.0"
