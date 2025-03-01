@@ -1,6 +1,6 @@
 {
   "name": "say-hello-world",
-  "displayName": "Hello World",
+  "displayName": "Hello, world!",
   "description": "Display \"Hello, world!\" in various ways!",
   "publisher": "wnrock",
   "repository": {
