@@ -19,6 +19,8 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.showInformationMessage('Hello World from Hello World!');
 	});
 
+	vscode.window.setStatusBarMessage("Hello, world!");
+
 	context.subscriptions.push(disposable);
 }
 
