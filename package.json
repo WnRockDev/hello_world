@@ -21,8 +21,27 @@
       {
         "command": "hello-world.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "hello-world.helloFile",
+        "title": "Hello File"
       }
-    ]
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "hello-world.helloFile",
+          "group": "9_hello_world"
+        }
+      ],
+      "editor/context": [
+        {
+          "when": "editorFocus",
+          "command": "hello-world.helloFile",
+          "group": "9_hello_world"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

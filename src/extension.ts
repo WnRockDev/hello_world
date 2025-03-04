@@ -22,7 +22,11 @@ export function activate(context: vscode.ExtensionContext) {
 	vscode.window.setStatusBarMessage("Hello, world!");
 
 	context.subscriptions.push(disposable);
+
+	context.subscriptions.push(vscode.commands.registerCommand('hello-world.helloFile', (uri: vscode.Uri) => {
+		vscode.window.showInformationMessage(`Hello from ${uri ? uri.path : 'Null'}`);
+	}));
 }
 
 // This method is called when your extension is deactivated
-export function deactivate() {}
+export function deactivate() { }
