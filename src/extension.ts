@@ -8,12 +8,12 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "hello-world" is now active!');
+	console.log('Congratulations, your extension "say-hello-world" is now active!');
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('hello-world.helloWorld', () => {
+	const disposable = vscode.commands.registerCommand('say-hello-world.helloWorld', () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
 		vscode.window.showInformationMessage('Hello World from Hello World!');
@@ -23,7 +23,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(disposable);
 
-	context.subscriptions.push(vscode.commands.registerCommand('hello-world.helloFile', (uri: vscode.Uri) => {
+	context.subscriptions.push(vscode.commands.registerCommand('say-hello-world.helloFile', (uri: vscode.Uri) => {
 		vscode.window.showInformationMessage(`Hello from ${uri ? uri.path : 'Null'}`);
 	}));
 }
