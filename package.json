@@ -14,7 +14,9 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "*"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
@@ -41,6 +43,23 @@
           "group": "9_hello_world"
         }
       ]
+    },
+    "configuration": {
+      "title": "Hello, world!",
+      "properties": {
+        "helloWorld.showStatusBarMessage": {
+          "title": "Show Status Bar Message",
+          "type": "boolean",
+          "default": true,
+          "description": "Enable status bar message"
+        },
+        "helloWorld.statusBarText": {
+          "title": "Status Bar Text",
+          "type": "string",
+          "default": "Hello, world!",
+          "description": "Text message to display on the status bar"
+        }
+      }
     }
   },
   "scripts": {

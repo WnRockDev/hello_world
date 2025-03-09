@@ -2,7 +2,24 @@ import * as vscode from 'vscode';
 
 
 export function activate(context: vscode.ExtensionContext) {
-	vscode.window.setStatusBarMessage("Hello, world!");
+	let statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
+
+	const updateStatusBarItem = () => {
+		const config = vscode.workspace.getConfiguration("helloWorld");
+		let showStatusBarMessage = config.get("showStatusBarMessage", true);
+		let statusBarText = config.get("statusBarText", "Hello, world!");
+
+		statusBarItem.text = statusBarText;
+		showStatusBarMessage ? statusBarItem.show() : statusBarItem.hide();
+	};
+
+	updateStatusBarItem();
+
+	vscode.workspace.onDidChangeConfiguration(e => {
+		if (e.affectsConfiguration("helloWorld.showStatusBarMessage") || e.affectsConfiguration("helloWorld.statusBarText")) {
+			updateStatusBarItem();
+		}
+	});
 
 	context.subscriptions.push(vscode.commands.registerCommand('say-hello-world.helloWorld', () => {
 		vscode.window.showInformationMessage('Hello World from Hello World!');
