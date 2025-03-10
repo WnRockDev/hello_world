@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.1.0]
+
+- Add an icon for the extension
+
 ## [0.0.2]
 
 - "Hello, world!" from explorer/editor context
